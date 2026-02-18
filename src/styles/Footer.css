@@ -1,0 +1,162 @@
+/* src/styles/Footer.css */
+.footer-container {
+  background-color: var(--dark-green);
+  color: white;
+  margin-top: 60px;
+}
+
+/* --- Newsletter Section --- */
+.footer-newsletter {
+  background-color: var(--primary-green);
+  padding: 40px 0;
+  text-align: center;
+}
+
+.newsletter-inner {
+  width: var(--container-width); /* Ensure this variable is defined in index.css, or use 1200px */
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap; /* Helps on smaller screens */
+}
+
+.newsletter-text h3 {
+  margin: 0;
+  font-family: 'Georgia', serif;
+  font-size: 24px;
+}
+
+.newsletter-input {
+  padding: 10px;
+  width: 300px;
+  border: none;
+  border-radius: 4px;
+}
+
+.newsletter-btn {
+  background-color: var(--accent-gold);
+  color: var(--text-dark);
+  font-weight: bold;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* --- Main Links Section --- */
+.footer-links {
+  width: var(--container-width);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 50px 20px;
+  display: grid;
+  /* UPDATED: Changed from 4 to 5 to fit the App buttons */
+  grid-template-columns: repeat(5, 1fr); 
+  gap: 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer-column h4 {
+  color: var(--accent-gold);
+  font-size: 16px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 12px;
+  font-size: 14px;
+  cursor: pointer;
+  color: #ddd;
+}
+
+.footer-column ul li:hover {
+  text-decoration: underline;
+  color: white;
+}
+
+/* --- NEW: App Store Button Styles --- */
+.app-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.store-btn {
+  background-color: black;
+  color: white;
+  border: 1px solid #333; /* Slight border for definition */
+  border-radius: 8px;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 160px; /* Fixed width for consistency */
+  cursor: pointer;
+  transition: transform 0.2s, opacity 0.2s;
+  text-align: left;
+}
+
+.store-btn:hover {
+  opacity: 0.8;
+  transform: translateY(-2px);
+}
+
+.store-icon {
+  font-size: 24px;
+}
+
+.btn-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.small-text {
+  font-size: 10px;
+  font-weight: normal;
+}
+
+.big-text {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* --- Bottom Bar --- */
+.footer-bottom {
+  text-align: center;
+  padding: 20px 0;
+  font-size: 12px;
+  color: #aaa;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .footer-links {
+    grid-template-columns: repeat(3, 1fr); /* Tablet: 3 columns */
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-links {
+    grid-template-columns: 1fr; /* Mobile: 1 column */
+    text-align: center;
+  }
+  
+  .app-buttons {
+    align-items: center; /* Center buttons on mobile */
+  }
+
+  .newsletter-inner {
+    flex-direction: column;
+  }
+}

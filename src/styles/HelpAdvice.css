@@ -1,0 +1,125 @@
+.help-page {
+  background-color: #fcfbf8; /* Cream background */
+  font-family: 'Arial', sans-serif;
+  padding-bottom: 60px;
+}
+
+/* Header */
+.help-header {
+  background-color: #1a4d3a; /* Dark Green */
+  color: white;
+  text-align: center;
+  padding: 50px 20px;
+  margin-bottom: 40px;
+}
+
+.help-header h1 {
+  font-family: 'Georgia', serif;
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.help-header p {
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+/* Grid Section */
+.help-section-container {
+  max-width: 1000px;
+  margin: 0 auto 50px;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.help-section-container h2 {
+  color: #1a4d3a;
+  font-family: 'Georgia', serif;
+  margin-bottom: 30px;
+  font-size: 28px;
+}
+
+.help-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.help-card {
+  background: white;
+  padding: 30px;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+  transition: transform 0.3s;
+}
+
+.help-card:hover {
+  transform: translateY(-5px);
+  border-color: #ffb81c; /* Gold highlight */
+}
+
+.help-icon {
+  color: #1a4d3a;
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+.help-card h3 {
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.help-card p {
+  color: #666;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* FAQ Section */
+.faq-section {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.faq-section h2 {
+  text-align: center;
+  color: #1a4d3a;
+  font-family: 'Georgia', serif;
+  margin-bottom: 30px;
+}
+
+.faq-item {
+  background: white;
+  padding: 20px;
+  margin-bottom: 15px;
+  border-left: 4px solid #ffb81c; /* Gold accent */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.faq-item h4 {
+  margin: 0 0 10px 0;
+  color: #333;
+  font-size: 16px;
+}
+
+.faq-item p {
+  margin: 0;
+  color: #555;
+  font-size: 14px;
+}
+
+/* Contact Banner */
+.contact-help-banner {
+  max-width: 800px;
+  margin: 50px auto 0;
+  background-color: #e8f5e9; /* Very light green */
+  padding: 30px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  color: #1a4d3a;
+}

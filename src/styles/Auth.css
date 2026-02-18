@@ -1,0 +1,82 @@
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh; /* Taller to center it nicely on screen */
+  background-color: #fcfbf8; /* Light Cream background */
+  padding: 20px;
+}
+
+.auth-card {
+  background: white;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  border-top: 5px solid #1a4d3a; /* Green Brand Border */
+}
+
+.auth-card h2 {
+  color: #1a4d3a; /* Dark Green */
+  margin-bottom: 10px;
+  font-family: 'Georgia', serif;
+}
+
+.auth-card p {
+  color: #666;
+  margin-bottom: 30px;
+  font-size: 14px;
+}
+
+/* Style for Inputs */
+.auth-card input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  box-sizing: border-box; /* Ensures padding doesn't break layout */
+}
+
+.auth-card input:focus {
+  border-color: #1a4d3a;
+  outline: none;
+}
+
+.auth-btn {
+  width: 100%;
+  padding: 14px;
+  background-color: #1a4d3a;
+  color: white;
+  border: none;
+  border-radius: 5px; /* Slightly rounded corners */
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.3s ease;
+}
+
+.auth-btn:hover {
+  background-color: #143d2e; /* Darker green on hover */
+}
+
+.auth-switch {
+  margin-top: 25px;
+  font-size: 14px;
+  color: #555;
+}
+
+.auth-switch a {
+  color: #1a4d3a;
+  font-weight: bold;
+  text-decoration: none;
+  margin-left: 5px;
+}
+
+.auth-switch a:hover {
+  text-decoration: underline;
+}

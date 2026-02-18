@@ -1,0 +1,90 @@
+/* Page Layout */
+.contact-page {
+  background-color: #fcfbf8; /* Cream background */
+  padding: 40px 20px;
+  min-height: 80vh;
+  font-family: 'Arial', sans-serif;
+}
+
+.contact-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Headings & Text */
+.contact-container h1 {
+  color: #333;
+  font-family: 'Georgia', serif;
+  font-size: 32px;
+  border-bottom: 1px solid #e0c080; /* Thin gold line */
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+}
+
+.contact-intro {
+  font-size: 14px;
+  color: #444;
+  margin-bottom: 20px;
+}
+
+.contact-info-block {
+  margin-bottom: 30px;
+  font-size: 13px;
+  color: #555;
+  line-height: 1.5;
+}
+
+.contact-info-block strong {
+  color: #333;
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* Form Styling */
+.contact-form {
+  max-width: 600px; /* Limits width like screenshot */
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 12px;
+  font-weight: bold;
+  color: #444;
+  margin-bottom: 5px;
+}
+
+.required {
+  color: #cc0000;
+}
+
+.form-group input, 
+.form-group select, 
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #333; /* Darker border like screenshot */
+  background-color: white;
+  border-radius: 0; /* Square corners */
+  font-size: 14px;
+}
+
+/* Submit Button */
+.contact-submit-btn {
+  background-color: #1a4d3a; /* Dark Green */
+  color: white;
+  border: none;
+  padding: 12px 40px;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 10px;
+  border-radius: 3px;
+}
+
+.contact-submit-btn:hover {
+  background-color: #005e2f;
+}

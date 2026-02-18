@@ -1,0 +1,39 @@
+:root {
+  /* Brand Colors */
+  --primary-green: #006633; /* Wiltshire Green */
+  --dark-green: #004d26;
+  --light-green: #e6f0eb;
+  --accent-gold: #c5a059;
+  --text-dark: #333333;
+  --text-grey: #666666;
+  --bg-light: #f9f9f9;
+  --white: #ffffff;
+  --border-color: #dddddd;
+
+  /* Spacing */
+  --container-width: 1200px;
+  --header-height: 140px;
+}
+
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif; /* Standard safe font */
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}

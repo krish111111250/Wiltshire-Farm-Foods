@@ -1,0 +1,81 @@
+/* src/styles/Basket.css */
+.basket-page {
+  width: var(--container-width);
+  margin: 40px auto;
+  padding: 0 20px;
+  min-height: 60vh;
+}
+
+.basket-title {
+  font-family: 'Georgia', serif;
+  color: var(--primary-green);
+  border-bottom: 2px solid #eee;
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+}
+
+.empty-basket {
+  text-align: center;
+  padding: 50px;
+}
+
+.basket-item {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+  gap: 20px;
+}
+
+.item-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.item-details {
+  flex-grow: 1;
+}
+
+.item-details h3 {
+  margin: 0 0 5px 0;
+  color: var(--primary-green);
+}
+
+.remove-btn {
+  color: #cc0000;
+  cursor: pointer;
+  font-size: 14px;
+  text-decoration: underline;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.basket-summary {
+  margin-top: 40px;
+  text-align: right;
+  background-color: #f9f9f9;
+  padding: 30px;
+  border-radius: 8px;
+}
+
+.total-price-large {
+  font-size: 32px;
+  font-weight: bold;
+  color: var(--text-dark);
+  display: block;
+  margin-bottom: 20px;
+}
+
+.checkout-btn {
+  background-color: var(--primary-green);
+  color: white;
+  padding: 15px 50px;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+}

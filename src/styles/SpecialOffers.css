@@ -1,0 +1,160 @@
+.offers-page {
+  background-color: #fcfbf8;
+  font-family: 'Arial', sans-serif;
+  padding-bottom: 60px;
+}
+
+/* Header */
+.offers-header {
+  background-color: #1a4d3a; /* Dark Green */
+  color: white;
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.offers-header h1 {
+  font-family: 'Georgia', serif;
+  font-size: 36px;
+  margin-bottom: 10px;
+  color: #ffb81c; /* Gold Text for "Special" feel */
+}
+
+/* Hero Offer Banner */
+.hero-offer {
+  background: linear-gradient(to right, #1a4d3a, #2c7a5b);
+  color: white;
+  max-width: 900px;
+  margin: -30px auto 50px; /* Pulls it up slightly */
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+  text-align: center;
+  position: relative;
+  border: 2px solid #ffb81c;
+}
+
+.offer-badge {
+  background-color: #ffb81c;
+  color: #1a4d3a;
+  font-weight: bold;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+.hero-offer h2 {
+  font-family: 'Georgia', serif;
+  font-size: 32px;
+  margin: 20px 0;
+}
+
+.hero-offer p {
+  font-size: 16px;
+  margin-bottom: 25px;
+}
+
+.shop-now-btn {
+  background-color: white;
+  color: #1a4d3a;
+  padding: 12px 30px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
+  transition: background 0.3s;
+  display: inline-block;
+}
+
+.shop-now-btn:hover {
+  background-color: #f0f0f0;
+}
+
+/* Offers Grid */
+.offers-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.offers-container h2 {
+  text-align: center;
+  color: #333;
+  font-family: 'Georgia', serif;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #ffb81c;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+.offers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.offer-card {
+  background: white;
+  padding: 30px;
+  border: 1px solid #eee;
+  text-align: center;
+  border-radius: 8px;
+  transition: transform 0.3s;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.offer-card:hover {
+  transform: translateY(-5px);
+  border-color: #ffb81c;
+}
+
+.icon-circle {
+  width: 60px;
+  height: 60px;
+  background-color: #fff8e1;
+  color: #ffb81c;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  font-size: 24px;
+}
+
+.offer-card h3 {
+  color: #1a4d3a;
+  margin-bottom: 15px;
+}
+
+.offer-card p {
+  color: #666;
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.view-offer-btn {
+  background: none;
+  border: 1px solid #1a4d3a;
+  color: #1a4d3a;
+  padding: 8px 20px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.3s;
+}
+
+.view-offer-btn:hover {
+  background-color: #1a4d3a;
+  color: white;
+}
+
+.terms-section {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 12px;
+  color: #999;
+}
+
+@media (max-width: 768px) {
+  .offers-grid { grid-template-columns: 1fr; }
+}

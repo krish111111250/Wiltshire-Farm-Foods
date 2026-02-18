@@ -1,0 +1,183 @@
+/* Existing Styles... */
+
+/* Layout */
+.product-detail-container {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 50px;
+}
+
+.detail-image-section {
+  flex: 1;
+}
+
+.detail-image {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.detail-info-section {
+  flex: 1;
+}
+
+.detail-title {
+  color: #005e2f;
+  margin-top: 0;
+  font-size: 32px;
+}
+
+.detail-rating {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.detail-price {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.add-to-basket-area {
+  margin-top: 30px;
+}
+
+.basket-btn-large {
+  background-color: #005e2f;
+  color: white;
+  border: none;
+  padding: 15px 40px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background 0.3s;
+  width: 100%;
+}
+
+.basket-btn-large:hover {
+  background-color: #004a25;
+}
+
+@media (max-width: 768px) {
+  .product-detail-container {
+    flex-direction: column;
+  }
+}
+
+/* Extras Styles */
+
+.detail-extras {
+  margin-top: 20px;
+  background: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.detail-section {
+  margin-bottom: 15px;
+}
+
+.detail-section h3 {
+  font-size: 16px;
+  color: #005e2f;
+  margin-bottom: 5px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 3px;
+}
+
+.dietary-badges {
+  display: flex;
+  gap: 10px;
+}
+
+.badge {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: bold;
+  color: white;
+}
+
+.badge.gf {
+  background-color: #d4a017;
+}
+
+/* Gold */
+.badge.ls {
+  background-color: #4a90e2;
+}
+
+/* Blue */
+.badge.v {
+  background-color: #2ecc71;
+}
+
+/* Green */
+
+.nutrition-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
+}
+
+.nutrition-list li {
+  font-size: 14px;
+}
+
+/* Related Products */
+.related-products {
+  margin-top: 50px;
+  padding-top: 20px;
+  border-top: 2px solid #eee;
+}
+
+.related-products h2 {
+  color: #005e2f;
+  margin-bottom: 20px;
+}
+
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.related-card {
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.2s;
+}
+
+.related-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.related-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.related-card h4 {
+  margin: 10px;
+  font-size: 14px;
+  color: #333;
+}
+
+.related-price {
+  display: block;
+  margin: 0 10px 10px;
+  font-weight: bold;
+  color: #005e2f;
+}
