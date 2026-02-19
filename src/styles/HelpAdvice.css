@@ -1,12 +1,14 @@
 .help-page {
-  background-color: #fcfbf8; /* Cream background */
+  background-color: #fcfbf8;
+  /* Cream background */
   font-family: 'Arial', sans-serif;
   padding-bottom: 60px;
 }
 
 /* Header */
 .help-header {
-  background-color: #1a4d3a; /* Dark Green */
+  background-color: #1a4d3a;
+  /* Dark Green */
   color: white;
   text-align: center;
   padding: 50px 20px;
@@ -50,13 +52,14 @@
   padding: 30px;
   border: 1px solid #e0e0e0;
   border-radius: 5px;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s;
 }
 
 .help-card:hover {
   transform: translateY(-5px);
-  border-color: #ffb81c; /* Gold highlight */
+  border-color: #ffb81c;
+  /* Gold highlight */
 }
 
 .help-icon {
@@ -94,8 +97,9 @@
   background: white;
   padding: 20px;
   margin-bottom: 15px;
-  border-left: 4px solid #ffb81c; /* Gold accent */
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  border-left: 4px solid #ffb81c;
+  /* Gold accent */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
 .faq-item h4 {
@@ -114,7 +118,7 @@
 .contact-help-banner {
   max-width: 800px;
   margin: 50px auto 0;
-  background-color: #e8f5e9; /* Very light green */
+  background-color: #e8f5e9;
   padding: 30px;
   border-radius: 8px;
   display: flex;
@@ -122,4 +126,56 @@
   justify-content: center;
   gap: 20px;
   color: #1a4d3a;
+  flex-wrap: wrap;
+}
+
+/* ========================
+   MOBILE RESPONSIVE FIXES
+   ======================== */
+@media (max-width: 768px) {
+  .help-header {
+    padding: 30px 15px;
+  }
+
+  .help-header h1 {
+    font-size: 26px;
+  }
+
+  .help-section-container {
+    padding: 0 15px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .help-section-container h2 {
+    font-size: 22px;
+    text-align: left;
+  }
+
+  /* Stack cards vertically — NO horizontal overflow */
+  .help-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+  }
+
+  .help-card {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  .faq-section {
+    padding: 0 15px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .contact-help-banner {
+    flex-direction: column;
+    text-align: center;
+    margin: 30px 15px 0;
+    padding: 20px 15px;
+  }
 }

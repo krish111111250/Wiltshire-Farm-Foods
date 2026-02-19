@@ -1,6 +1,6 @@
 :root {
   /* Brand Colors */
-  --primary-green: #006633; /* Wiltshire Green */
+  --primary-green: #006633;
   --dark-green: #004d26;
   --light-green: #e6f0eb;
   --accent-gold: #c5a059;
@@ -10,17 +10,19 @@
   --white: #ffffff;
   --border-color: #dddddd;
 
-  /* Spacing */
+  /* Spacing — use ONLY as max-width, never as width */
   --container-width: 1200px;
   --header-height: 140px;
 }
 
 body {
   margin: 0;
-  font-family: 'Arial', sans-serif; /* Standard safe font */
+  font-family: 'Arial', sans-serif;
   background-color: var(--bg-light);
   color: var(--text-dark);
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 * {

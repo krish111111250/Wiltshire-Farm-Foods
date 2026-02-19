@@ -13,14 +13,15 @@
 }
 
 .newsletter-inner {
-  width: var(--container-width); /* Ensure this variable is defined in index.css, or use 1200px */
-  max-width: 1200px;
+  width: 100%;
+  max-width: var(--container-width);
   margin: 0 auto;
+  padding: 0 20px;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 20px;
-  flex-wrap: wrap; /* Helps on smaller screens */
+  flex-wrap: wrap;
 }
 
 .newsletter-text h3 {
@@ -31,10 +32,18 @@
 
 .newsletter-input {
   padding: 10px;
-  width: 300px;
+  width: 100%;
+  max-width: 300px;
   border: none;
   border-radius: 4px;
 }
+
+.newsletter-form {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
 
 .newsletter-btn {
   background-color: var(--accent-gold);
@@ -48,15 +57,14 @@
 
 /* --- Main Links Section --- */
 .footer-links {
-  width: var(--container-width);
-  max-width: 1200px;
+  width: 100%;
+  max-width: var(--container-width);
   margin: 0 auto;
   padding: 50px 20px;
   display: grid;
-  /* UPDATED: Changed from 4 to 5 to fit the App buttons */
-  grid-template-columns: repeat(5, 1fr); 
+  grid-template-columns: repeat(5, 1fr);
   gap: 20px;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .footer-column h4 {
@@ -94,13 +102,15 @@
 .store-btn {
   background-color: black;
   color: white;
-  border: 1px solid #333; /* Slight border for definition */
+  border: 1px solid #333;
+  /* Slight border for definition */
   border-radius: 8px;
   padding: 8px 12px;
   display: flex;
   align-items: center;
   gap: 12px;
-  width: 160px; /* Fixed width for consistency */
+  width: 160px;
+  /* Fixed width for consistency */
   cursor: pointer;
   transition: transform 0.2s, opacity 0.2s;
   text-align: left;
@@ -142,18 +152,21 @@
 /* Responsive Design */
 @media (max-width: 992px) {
   .footer-links {
-    grid-template-columns: repeat(3, 1fr); /* Tablet: 3 columns */
+    grid-template-columns: repeat(3, 1fr);
+    /* Tablet: 3 columns */
   }
 }
 
 @media (max-width: 768px) {
   .footer-links {
-    grid-template-columns: 1fr; /* Mobile: 1 column */
+    grid-template-columns: 1fr;
+    /* Mobile: 1 column */
     text-align: center;
   }
-  
+
   .app-buttons {
-    align-items: center; /* Center buttons on mobile */
+    align-items: center;
+    /* Center buttons on mobile */
   }
 
   .newsletter-inner {

@@ -7,7 +7,18 @@ export const BasketProvider = ({ children }) => {
   const [basketItems, setBasketItems] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [activeCategory, setActiveCategory] = useState('All');
-  
+
+  // Toast notification state
+  const [toast, setToast] = useState({ visible: false, message: '' });
+
+  const showToast = (message) => {
+    setToast({ visible: true, message });
+  };
+
+  const hideToast = () => {
+    setToast({ visible: false, message: '' });
+  };
+
   // ADDED: User State to track if someone is logged in
   const [user, setUser] = useState(null);
 
@@ -59,7 +70,7 @@ export const BasketProvider = ({ children }) => {
       }
       return [...prevItems, { ...product, quantity: 1 }];
     });
-    // alert(`Added ${product.title} to basket!`);
+    showToast(`✅ ${product.title} added to basket!`);
   };
 
   const updateQuantity = (id, newQuantity) => {
@@ -92,24 +103,23 @@ export const BasketProvider = ({ children }) => {
   // --- 4. PROVIDER VALUE (Exporting everything) ---
   return (
     <BasketContext.Provider value={{
-      // Basket Data
       basketItems,
       basketTotal,
       searchTerm,
       setSearchTerm,
       activeCategory,
       setActiveCategory,
-      
-      // User Data (Must be included!)
       user,
-
-      // Functions
       addToBasket,
       removeFromBasket,
       updateQuantity,
       clearBasket,
-      login,  // <--- This was missing
-      logout
+      login,
+      logout,
+      // Toast
+      toast,
+      showToast,
+      hideToast,
     }}>
       {children}
     </BasketContext.Provider>

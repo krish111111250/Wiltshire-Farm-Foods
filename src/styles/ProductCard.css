@@ -2,9 +2,11 @@
 
 /* --- Grid Section --- */
 .featured-section {
-  width: var(--container-width);
+  width: 100%;
+  max-width: var(--container-width);
   margin: 60px auto;
   padding: 0 20px;
+  box-sizing: border-box;
 }
 
 .section-title {
@@ -17,8 +19,53 @@
 
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 cards per row */
+  grid-template-columns: repeat(4, 1fr);
   gap: 30px;
+}
+
+@media (max-width: 1024px) {
+  .product-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .featured-section {
+    margin: 30px auto;
+    padding: 0 15px;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .section-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .card-title {
+    font-size: 14px;
+    height: auto;
+  }
+
+  .price {
+    font-size: 15px;
+  }
+
+  .add-btn {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
 }
 
 /* --- The Card --- */
@@ -34,7 +81,7 @@
 
 .product-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
 }
 
 .card-image-container {
@@ -73,7 +120,8 @@
   color: var(--primary-green);
   margin: 0 0 10px 0;
   font-weight: bold;
-  height: 44px; /* Limits title to 2 lines */
+  height: 44px;
+  /* Limits title to 2 lines */
   overflow: hidden;
 }
 

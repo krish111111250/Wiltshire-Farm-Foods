@@ -1,9 +1,11 @@
 /* src/styles/Basket.css */
 .basket-page {
-  width: var(--container-width);
+  width: 100%;
+  max-width: var(--container-width);
   margin: 40px auto;
   padding: 0 20px;
   min-height: 60vh;
+  box-sizing: border-box;
 }
 
 .basket-title {
@@ -78,4 +80,37 @@
   border: none;
   border-radius: 30px;
   cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .basket-page {
+    margin: 20px auto;
+    padding: 0 15px;
+  }
+
+  .basket-item {
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 15px;
+  }
+
+  .item-image {
+    width: 70px;
+    height: 70px;
+  }
+
+  .basket-summary {
+    text-align: center;
+    padding: 20px 15px;
+  }
+
+  .checkout-btn {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+  }
+
+  .total-price-large {
+    font-size: 24px;
+  }
 }

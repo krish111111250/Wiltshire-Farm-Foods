@@ -1,11 +1,11 @@
 import React from 'react';
 import { useBasket } from '../context/BasketContext';
 import { Link, useNavigate } from 'react-router-dom';
+import { FaLock, FaUser } from 'react-icons/fa';
 import '../styles/Basket.css';
 
 const Basket = () => {
-  // 1. Destructure updateQuantity from context
-  const { basketItems, basketTotal, removeFromBasket, updateQuantity } = useBasket();
+  const { basketItems, basketTotal, removeFromBasket, updateQuantity, user } = useBasket();
   const navigate = useNavigate();
 
   if (basketItems.length === 0) {
@@ -14,7 +14,7 @@ const Basket = () => {
         <h1 className="basket-title">Your Basket</h1>
         <div className="empty-basket">
           <p>Your basket is currently empty.</p>
-          <Link to="/" style={{color: 'var(--primary-green)', fontWeight: 'bold'}}>Return to Menu</Link>
+          <Link to="/" style={{ color: 'var(--primary-green)', fontWeight: 'bold' }}>Return to Menu</Link>
         </div>
       </div>
     );
@@ -28,23 +28,23 @@ const Basket = () => {
         {basketItems.map((item) => (
           <div key={item.id} className="basket-item">
             <img src={item.image} alt={item.title} className="item-image" />
-            
+
             <div className="item-details">
               <h3>{item.title}</h3>
               <p>Delivery: Standard Delivery</p>
-              
+
               {/* 2. NEW: Quantity Controls */}
               <div className="quantity-controls" style={{ display: 'flex', alignItems: 'center', gap: '15px', marginTop: '10px' }}>
-                <button 
-                  className="qty-btn" 
+                <button
+                  className="qty-btn"
                   onClick={() => updateQuantity(item.id, (item.quantity || 1) - 1)}
                   style={{ padding: '2px 10px', cursor: 'pointer', border: '1px solid #ccc' }}
                 >
                   -
                 </button>
                 <span style={{ fontWeight: 'bold' }}>{item.quantity || 1}</span>
-                <button 
-                  className="qty-btn" 
+                <button
+                  className="qty-btn"
                   onClick={() => updateQuantity(item.id, (item.quantity || 1) + 1)}
                   style={{ padding: '2px 10px', cursor: 'pointer', border: '1px solid #ccc' }}
                 >
@@ -70,16 +70,43 @@ const Basket = () => {
 
       <div className="basket-summary">
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '5px' }}>
-          <span style={{fontSize: '18px'}}>Subtotal:</span>
+          <span style={{ fontSize: '18px' }}>Subtotal:</span>
           <span className="total-price-large">£{basketTotal.toFixed(2)}</span>
         </div>
-        
-        <button 
-            className="checkout-btn" 
+
+        {user ? (
+          // ✅ Logged in: go straight to checkout
+          <button
+            className="checkout-btn"
             onClick={() => navigate('/checkout')}
-        >
+          >
             Proceed to Checkout
-        </button>
+          </button>
+        ) : (
+          // 🔒 Not logged in: show login prompt
+          <div style={{ textAlign: 'right' }}>
+            <p style={{ color: '#cc0000', fontSize: '14px', marginBottom: '10px', display: 'flex', alignItems: 'center', justifyContent: 'flex-end', gap: '6px' }}>
+              <FaLock /> Please log in to proceed to checkout
+            </p>
+            <div style={{ display: 'flex', gap: '10px', justifyContent: 'flex-end', flexWrap: 'wrap' }}>
+              <button
+                className="checkout-btn"
+                style={{ backgroundColor: '#1a4d3a', padding: '12px 25px' }}
+                onClick={() => navigate('/login')}
+              >
+                <FaUser style={{ marginRight: '8px' }} />
+                Login to Checkout
+              </button>
+              <button
+                className="checkout-btn"
+                style={{ backgroundColor: '#555', padding: '12px 25px' }}
+                onClick={() => navigate('/register')}
+              >
+                Create Account
+              </button>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
