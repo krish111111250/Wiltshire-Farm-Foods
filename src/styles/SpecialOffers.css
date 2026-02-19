@@ -6,7 +6,7 @@
 
 /* Header */
 .offers-header {
-  background-color: #1a4d3a; /* Dark Green */
+  background-color: #2d5a4e; /* Dark Green */
   color: white;
   text-align: center;
   padding: 50px 20px;
@@ -21,7 +21,7 @@
 
 /* Hero Offer Banner */
 .hero-offer {
-  background: linear-gradient(to right, #1a4d3a, #2c7a5b);
+  background: linear-gradient(to right, #2d5a4e, #2c7a5b);
   color: white;
   max-width: 900px;
   margin: -30px auto 50px; /* Pulls it up slightly */
@@ -35,7 +35,7 @@
 
 .offer-badge {
   background-color: #ffb81c;
-  color: #1a4d3a;
+  color: #2d5a4e;
   font-weight: bold;
   padding: 5px 15px;
   border-radius: 20px;
@@ -56,7 +56,7 @@
 
 .shop-now-btn {
   background-color: white;
-  color: #1a4d3a;
+  color: #2d5a4e;
   padding: 12px 30px;
   text-decoration: none;
   font-weight: bold;
@@ -121,7 +121,7 @@
 }
 
 .offer-card h3 {
-  color: #1a4d3a;
+  color: #2d5a4e;
   margin-bottom: 15px;
 }
 
@@ -134,8 +134,8 @@
 
 .view-offer-btn {
   background: none;
-  border: 1px solid #1a4d3a;
-  color: #1a4d3a;
+  border: 1px solid #2d5a4e;
+  color: #2d5a4e;
   padding: 8px 20px;
   font-weight: bold;
   cursor: pointer;
@@ -144,7 +144,7 @@
 }
 
 .view-offer-btn:hover {
-  background-color: #1a4d3a;
+  background-color: #2d5a4e;
   color: white;
 }
 

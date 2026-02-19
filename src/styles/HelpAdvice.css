@@ -7,7 +7,7 @@
 
 /* Header */
 .help-header {
-  background-color: #1a4d3a;
+  background-color: #2d5a4e;
   /* Dark Green */
   color: white;
   text-align: center;
@@ -35,7 +35,7 @@
 }
 
 .help-section-container h2 {
-  color: #1a4d3a;
+  color: #2d5a4e;
   font-family: 'Georgia', serif;
   margin-bottom: 30px;
   font-size: 28px;
@@ -63,7 +63,7 @@
 }
 
 .help-icon {
-  color: #1a4d3a;
+  color: #2d5a4e;
   font-size: 40px;
   margin-bottom: 15px;
 }
@@ -88,7 +88,7 @@
 
 .faq-section h2 {
   text-align: center;
-  color: #1a4d3a;
+  color: #2d5a4e;
   font-family: 'Georgia', serif;
   margin-bottom: 30px;
 }
@@ -125,7 +125,7 @@
   align-items: center;
   justify-content: center;
   gap: 20px;
-  color: #1a4d3a;
+  color: #2d5a4e;
   flex-wrap: wrap;
 }
 

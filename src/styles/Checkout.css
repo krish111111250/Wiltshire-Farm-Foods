@@ -8,7 +8,7 @@
 }
 
 .checkout-container h1 {
-  color: #1a4d3a; /* Dark Green */
+  color: #2d5a4e; /* Dark Green */
   border-bottom: 2px solid #ddd;
   padding-bottom: 15px;
   margin-bottom: 30px;
@@ -47,7 +47,7 @@
 .checkout-section h2 {
   margin-top: 0;
   margin-bottom: 20px;
-  color: #1a4d3a;
+  color: #2d5a4e;
   font-size: 20px;
   border-bottom: 1px solid #eee;
   padding-bottom: 10px;
@@ -76,7 +76,7 @@
 }
 
 .input-disabled {
-  background-color: #f9f9f9;
+  background-color: #f5f0e8;
   color: #777;
   cursor: not-allowed;
 }
@@ -114,32 +114,32 @@
 }
 
 .date-picker:focus, .time-select:focus {
-  border-color: #1a4d3a;
+  border-color: #2d5a4e;
   outline: none;
   box-shadow: 0 0 5px rgba(26, 77, 58, 0.2);
 }
 
 .delivery-confirm-text {
   background-color: #e8f5e9;
-  color: #1a4d3a;
+  color: #2d5a4e;
   padding: 12px;
   border-radius: 5px;
   font-size: 14px;
   margin-top: 10px;
-  border-left: 4px solid #1a4d3a;
+  border-left: 4px solid #2d5a4e;
 }
 
 /* --- ORDER SUMMARY BOX --- */
 .order-summary-box {
   background: #fcfbf8; /* Light Cream */
   padding: 25px;
-  border: 2px solid #1a4d3a;
+  border: 2px solid #2d5a4e;
   border-radius: 8px;
 }
 
 .order-summary-box h3 {
   margin-top: 0;
-  color: #1a4d3a;
+  color: #2d5a4e;
   border-bottom: 1px solid #ccc;
   padding-bottom: 10px;
   margin-bottom: 15px;
@@ -158,7 +158,7 @@
   justify-content: space-between;
   font-size: 20px;
   font-weight: bold;
-  color: #1a4d3a;
+  color: #2d5a4e;
   margin-top: 15px;
   padding-top: 15px;
   border-top: 1px solid #ccc;
@@ -167,7 +167,7 @@
 /* --- BUTTONS --- */
 .place-order-btn {
   width: 100%;
-  background-color: #1a4d3a; /* Primary Green */
+  background-color: #2d5a4e; /* Primary Green */
   color: white;
   padding: 18px;
   font-size: 18px;
@@ -200,11 +200,11 @@
   box-shadow: 0 5px 20px rgba(0,0,0,0.1);
   max-width: 500px;
   width: 100%;
-  border-top: 6px solid #1a4d3a;
+  border-top: 6px solid #2d5a4e;
 }
 
 .success-card h1 {
-  color: #1a4d3a;
+  color: #2d5a4e;
   margin-bottom: 10px;
 }
 
@@ -212,7 +212,7 @@
   background: #e8f5e9;
   padding: 10px;
   border-radius: 5px;
-  color: #1a4d3a;
+  color: #2d5a4e;
   margin: 15px 0;
 }
 
@@ -224,7 +224,7 @@
 }
 
 .download-btn {
-  background-color: #1a4d3a;
+  background-color: #2d5a4e;
   color: white;
   border: none;
   padding: 12px 20px;

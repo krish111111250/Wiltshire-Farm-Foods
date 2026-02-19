@@ -13,7 +13,7 @@
 
 /* Header Styling */
 .brochure-container h1 {
-  color: #1a4d3a; /* Deep Green */
+  color: #2d5a4e; /* Deep Green */
   font-family: 'Georgia', serif;
   font-size: 36px;
   border-bottom: 1px solid #ddd;
@@ -46,9 +46,9 @@
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
-  border: 1px solid #1a4d3a;
+  border: 1px solid #2d5a4e;
   background: white;
-  color: #1a4d3a;
+  color: #2d5a4e;
   transition: all 0.2s ease-in-out;
   text-transform: capitalize;
   border-radius: 0; /* Square corners */
@@ -62,9 +62,9 @@
 
 /* Active State: Dark Green Background */
 .toggle-btn.active {
-  background-color: #1a4d3a;
+  background-color: #2d5a4e;
   color: white;
-  border-bottom: 1px solid #1a4d3a;
+  border-bottom: 1px solid #2d5a4e;
   position: relative; 
   z-index: 10; /* Ensures active button border sits on top */
 }
@@ -110,7 +110,7 @@
 }
 
 .form-box h3 {
-  color: #1a4d3a;
+  color: #2d5a4e;
   font-family: 'Georgia', serif;
   font-size: 24px;
   margin-top: 0;
@@ -164,7 +164,7 @@ input, select {
 }
 
 input:focus, select:focus {
-  border-color: #1a4d3a;
+  border-color: #2d5a4e;
   outline: none;
 }
 
@@ -194,7 +194,7 @@ input:focus, select:focus {
 /* Submit Button */
 .submit-btn {
   width: 100%;
-  background-color: #1a4d3a;
+  background-color: #2d5a4e;
   color: white;
   padding: 18px;
   font-size: 16px;
