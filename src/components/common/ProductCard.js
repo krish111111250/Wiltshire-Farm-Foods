@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaStar } from 'react-icons/fa';
+import { FaHeart } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { useBasket } from '../../context/BasketContext';
 
@@ -8,35 +8,32 @@ const ProductCard = ({ product }) => {
 
   return (
     <div className="product-card">
-      {/* 1. Clickable Image */}
+      {/* Image */}
       <Link to={`/products/${product.id}`} className="card-image-container">
+        <button className="fav-icon" onClick={(e) => { e.preventDefault(); e.stopPropagation(); }}>
+          <FaHeart />
+        </button>
         {product.isNew && <span className="new-badge">NEW</span>}
         <img src={product.image} alt={product.title} className="card-image" />
       </Link>
-      
+
       <div className="card-details">
-        {/* 2. Clickable Title */}
+        {/* Title */}
         <Link to={`/products/${product.id}`} style={{ textDecoration: 'none' }}>
-           <h3 className="card-title">{product.title}</h3>
+          <h3 className="card-title">{product.title}</h3>
         </Link>
-        
-        {/* 3. Star Ratings */}
-        <div className="card-rating">
-          {[...Array(5)].map((_, i) => (
-            <FaStar key={i} color={i < product.rating ? "#c5a059" : "#e4e5e9"} />
-          ))}
+
+        {/* Weight + Price row */}
+        <div className="card-meta-row">
+          <span className="card-weight">{product.weight || '400g'}</span>
+          <span className="price">{product.price}</span>
         </div>
 
-        {/* 4. Price and Add Button */}
+        {/* Code + Basket button row */}
         <div className="card-footer">
-          <span className="price">{product.price}</span>
-          
-          {/* 5. UPDATED: Passing 'product' object instead of 'product.price' */}
-          <button 
-            className="add-btn"
-            onClick={() => addToBasket(product)}
-          >
-            Add to Basket
+          <span className="product-code">#{product.id || '0000'}</span>
+          <button className="add-btn" onClick={() => addToBasket(product)}>
+            + Basket
           </button>
         </div>
       </div>

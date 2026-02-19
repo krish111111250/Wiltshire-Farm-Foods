@@ -1,66 +1,324 @@
-/* src/styles/Home.css */
+/* =============================================
+   HOME PAGE - WFF Exact Style
+   ============================================= */
+
 .home-page {
-    padding-bottom: 50px;
-    background-color: #f9f9f9;
+    background: #f5f0e8;
 }
 
-/* Results Header - Green Box Style (Matching Bakery) */
+/* ── Results header (search/category view) ── */
 .results-header {
-    background-color: #1a4d3a;
-    color: white;
-    text-align: center;
-    padding: 50px 20px;
-    margin-bottom: 40px;
     width: 100%;
-    box-sizing: border-box;
+    background: #2d5a4e;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-    gap: 20px;
-    position: relative;
+    justify-content: space-between;
+    padding: 14px 20px;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .results-header h2 {
-    font-family: 'Georgia', serif;
-    font-size: 36px;
-    color: #ffb81c;
-    /* Gold text */
+    color: #f0a500;
+    font-size: 20px;
     margin: 0;
+    font-family: Georgia, serif;
+    text-align: center;
+    flex: 1;
 }
 
 .sort-select {
-    padding: 8px 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    background-color: white;
+    padding: 7px 12px;
+    border: 1px solid #f0a500;
+    border-radius: 3px;
+    font-size: 13px;
+    background: #f5f0e8;
     color: #333;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+}
+
+/* ── Trustpilot bar ── */
+.trustpilot-bar {
+    background: white;
+    padding: 14px 20px;
+    text-align: center;
     font-size: 14px;
-    margin-top: 10px;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #e8e8e8;
 }
 
-/* Desktop: Position sort button to the right */
-@media (min-width: 768px) {
-    .sort-select {
-        position: absolute;
-        right: 40px;
-        bottom: 20px;
-        margin: 0;
+.tp-stars {
+    color: #00b67a;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+.tp-logo {
+    color: #00b67a;
+    font-weight: 600;
+}
+
+/* ── Promo cards ── */
+.promo-cards-section {
+    background: #f5f0e8;
+    padding: 40px 0;
+}
+
+.promo-cards-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.promo-card {
+    background: white;
+    overflow: hidden;
+    border: 1px solid #e8e8e8;
+}
+
+.promo-card-img {
+    overflow: hidden;
+    height: 200px;
+}
+
+.promo-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.promo-card:hover .promo-card-img img {
+    transform: scale(1.04);
+}
+
+.promo-card-body {
+    padding: 20px;
+}
+
+.promo-card-body h3 {
+    font-family: Georgia, serif;
+    font-size: 18px;
+    color: #333;
+    margin: 0 0 10px;
+}
+
+.promo-card-body p {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.6;
+    margin: 0 0 16px;
+}
+
+.promo-btn {
+    background: #2d5a4e;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 3px;
+    font-family: Arial, sans-serif;
+}
+
+.promo-btn:hover {
+    background: #1e3e35;
+}
+
+/* ── Delivery section ── */
+.delivery-section {
+    background: #2d5a4e;
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.delivery-section h2 {
+    font-family: Georgia, serif;
+    font-size: 28px;
+    margin: 0 0 10px;
+    color: white;
+}
+
+.delivery-underline {
+    width: 60px;
+    height: 3px;
+    background: #f0a500;
+    margin: 0 auto 16px;
+    border-radius: 2px;
+}
+
+.delivery-section p {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.85);
+    margin: 0 0 24px;
+}
+
+.delivery-form {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.delivery-input {
+    flex: 1;
+    padding: 12px 16px;
+    border: 1px solid #f0a500;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 14px;
+    outline: none;
+    font-family: Arial, sans-serif;
+}
+
+.delivery-input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.delivery-btn {
+    background: #f0a500;
+    color: #333;
+    border: none;
+    padding: 12px 24px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+    white-space: nowrap;
+}
+
+.delivery-btn:hover {
+    background: #d99400;
+}
+
+/* ── Wood / Brochure section ── */
+.wood-section {
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+        url('https://images.unsplash.com/photo-1542621334-a254cf47733d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
+    color: white;
+    padding: 60px 0;
+}
+
+.wood-section-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.wood-col {}
+
+.wood-col h3 {
+    font-family: Georgia, serif;
+    font-size: 22px;
+    margin: 0 0 10px;
+    color: white;
+}
+
+.wood-underline {
+    width: 50px;
+    height: 3px;
+    background: #f0a500;
+    margin-bottom: 14px;
+    border-radius: 2px;
+}
+
+.wood-col p {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.6;
+    margin: 0 0 20px;
+}
+
+.wood-btn {
+    background: #2d5a4e;
+    color: white;
+    border: none;
+    padding: 11px 22px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 3px;
+    font-family: Arial, sans-serif;
+}
+
+.wood-btn:hover {
+    background: #1e3e35;
+}
+
+.wood-brochure-img {
+    width: 160px;
+    border-radius: 4px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+    .promo-cards-inner {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .wood-section-inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .wood-col:last-child {
+        order: 3;
+    }
+
+    .wood-center {
+        order: 2;
+    }
+
+    .wood-underline {
+        margin: 0 auto 14px;
+    }
+
+    .wood-brochure-img {
+        width: 120px;
     }
 }
 
-/* Mobile Adjustments */
-@media (max-width: 768px) {
-    .results-header {
-        padding: 30px 15px;
+@media (max-width: 600px) {
+    .promo-cards-inner {
+        grid-template-columns: 1fr;
     }
 
-    .results-header h2 {
-        font-size: 28px;
+    .promo-cards-section {
+        padding: 24px 0;
     }
 
-    .sort-select {
+    .delivery-section {
+        padding: 36px 16px;
+    }
+
+    .delivery-form {
+        flex-direction: column;
+    }
+
+    .delivery-btn {
         width: 100%;
-        position: static;
+    }
+
+    .trustpilot-bar {
+        font-size: 13px;
     }
 }

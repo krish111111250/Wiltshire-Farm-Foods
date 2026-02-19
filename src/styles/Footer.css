@@ -1,175 +1,241 @@
-/* src/styles/Footer.css */
+/* =============================================
+   FOOTER - WFF Exact Cream Style
+   ============================================= */
+
 .footer-container {
-  background-color: var(--dark-green);
-  color: white;
-  margin-top: 60px;
+  background: #f5f0e8;
+  color: #333;
+  font-family: Arial, sans-serif;
 }
 
-/* --- Newsletter Section --- */
-.footer-newsletter {
-  background-color: var(--primary-green);
-  padding: 40px 0;
-  text-align: center;
-}
-
-.newsletter-inner {
+/* Gold divider */
+.gold-divider-bar {
   width: 100%;
-  max-width: var(--container-width);
+  height: 20px;
+  background: #f0a500;
+}
+
+/* Main columns */
+.footer-main {
+  padding: 40px 0 30px;
+}
+
+.footer-inner {
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.newsletter-text h3 {
-  margin: 0;
-  font-family: 'Georgia', serif;
-  font-size: 24px;
-}
-
-.newsletter-input {
-  padding: 10px;
-  width: 100%;
-  max-width: 300px;
-  border: none;
-  border-radius: 4px;
-}
-
-.newsletter-form {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-}
-
-
-.newsletter-btn {
-  background-color: var(--accent-gold);
-  color: var(--text-dark);
-  font-weight: bold;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-/* --- Main Links Section --- */
-.footer-links {
-  width: 100%;
-  max-width: var(--container-width);
-  margin: 0 auto;
-  padding: 50px 20px;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 20px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+  gap: 40px;
 }
 
 .footer-column h4 {
-  color: var(--accent-gold);
-  font-size: 16px;
-  margin-bottom: 20px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  font-family: Georgia, serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #333;
+  margin: 0 0 14px;
 }
 
 .footer-column ul {
-  list-style: none;
-  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .footer-column ul li {
-  margin-bottom: 12px;
   font-size: 14px;
+  color: #333;
   cursor: pointer;
-  color: #ddd;
 }
 
 .footer-column ul li:hover {
+  color: #2d5a4e;
   text-decoration: underline;
-  color: white;
 }
 
-/* --- NEW: App Store Button Styles --- */
+.footer-sub {
+  font-size: 13px;
+  color: #666;
+  margin: 0 0 12px;
+  line-height: 1.5;
+}
+
+/* Logo in footer */
+.footer-logo-text {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+  line-height: 1.1;
+}
+
+.fl-top {
+  font-family: Georgia, serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #2d5a4e;
+}
+
+.fl-mid {
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: #666;
+}
+
+.fl-bottom {
+  font-family: Georgia, serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #2d5a4e;
+  background: #f0a500;
+  display: inline-block;
+  width: fit-content;
+  padding: 2px 8px;
+  margin-top: 2px;
+}
+
+/* Newsletter */
+.newsletter-form {
+  display: flex;
+  gap: 0;
+  margin-bottom: 8px;
+}
+
+.newsletter-input {
+  flex: 1;
+  padding: 10px 12px;
+  border: 1px solid #f0a500;
+  border-right: none;
+  font-size: 13px;
+  color: #333;
+  font-family: Arial, sans-serif;
+  background: white;
+  outline: none;
+}
+
+.newsletter-input::placeholder {
+  color: #aaa;
+}
+
+.newsletter-btn {
+  background: #f0a500;
+  color: #333;
+  border: none;
+  padding: 10px 16px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: Arial, sans-serif;
+  white-space: nowrap;
+}
+
+.newsletter-btn:hover {
+  background: #d99400;
+}
+
+.privacy-text {
+  font-size: 11px;
+  color: #888;
+  margin: 6px 0 12px;
+}
+
+.privacy-text span {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.social-icons {
+  display: flex;
+  gap: 12px;
+}
+
+.social-icons svg {
+  color: #6b6b6b;
+  cursor: pointer;
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  width: 32px;
+  height: 32px;
+}
+
+.social-icons svg:hover {
+  color: #2d5a4e;
+  border-color: #2d5a4e;
+}
+
+/* App buttons */
 .app-buttons {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
+  margin-top: 4px;
 }
 
 .store-btn {
-  background-color: black;
-  color: white;
-  border: 1px solid #333;
-  /* Slight border for definition */
-  border-radius: 8px;
-  padding: 8px 12px;
   display: flex;
   align-items: center;
-  gap: 12px;
-  width: 160px;
-  /* Fixed width for consistency */
+  gap: 10px;
+  background: #333;
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 6px;
   cursor: pointer;
-  transition: transform 0.2s, opacity 0.2s;
-  text-align: left;
+  width: 100%;
+  max-width: 180px;
 }
 
 .store-btn:hover {
-  opacity: 0.8;
-  transform: translateY(-2px);
-}
-
-.store-icon {
-  font-size: 24px;
+  background: #2d5a4e;
 }
 
 .btn-text {
   display: flex;
   flex-direction: column;
-  line-height: 1.1;
+  text-align: left;
 }
 
 .small-text {
   font-size: 10px;
-  font-weight: normal;
+  opacity: 0.8;
 }
 
 .big-text {
   font-size: 14px;
-  font-weight: bold;
+  font-weight: 700;
 }
 
-/* --- Bottom Bar --- */
+/* Bottom bar */
 .footer-bottom {
+  border-top: 1px solid #ddd;
+  padding: 14px 20px;
   text-align: center;
-  padding: 20px 0;
+}
+
+.footer-bottom p {
   font-size: 12px;
-  color: #aaa;
+  color: #888;
+  margin: 0;
 }
 
-/* Responsive Design */
-@media (max-width: 992px) {
-  .footer-links {
-    grid-template-columns: repeat(3, 1fr);
-    /* Tablet: 3 columns */
+/* Responsive */
+@media (max-width: 900px) {
+  .footer-inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
   }
 }
 
-@media (max-width: 768px) {
-  .footer-links {
+@media (max-width: 540px) {
+  .footer-inner {
     grid-template-columns: 1fr;
-    /* Mobile: 1 column */
-    text-align: center;
+    gap: 24px;
   }
 
-  .app-buttons {
-    align-items: center;
-    /* Center buttons on mobile */
-  }
-
-  .newsletter-inner {
-    flex-direction: column;
+  .footer-main {
+    padding: 28px 0 20px;
   }
 }

@@ -1,24 +1,27 @@
 :root {
-  /* Brand Colors */
-  --primary-green: #006633;
-  --dark-green: #004d26;
-  --light-green: #e6f0eb;
-  --accent-gold: #c5a059;
+  --green-dark: #2d5a4e;
+  --gold: #f0a500;
+  --cream: #f5f0e8;
+  --grey-bar: #6b6b6b;
   --text-dark: #333333;
   --text-grey: #666666;
-  --bg-light: #f9f9f9;
   --white: #ffffff;
+  --wood-overlay: rgba(0, 0, 0, 0.4);
+
+  /* Legacy aliases */
+  --primary-green: #2d5a4e;
+  --dark-green: #2d5a4e;
+  --accent-gold: #f0a500;
+  --bg-light: #f5f0e8;
   --border-color: #dddddd;
 
-  /* Spacing — use ONLY as max-width, never as width */
   --container-width: 1200px;
-  --header-height: 140px;
 }
 
 body {
   margin: 0;
-  font-family: 'Arial', sans-serif;
-  background-color: var(--bg-light);
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--cream);
   color: var(--text-dark);
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
@@ -38,4 +41,11 @@ ul {
   list-style: none;
   padding: 0;
   margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: Georgia, 'Times New Roman', serif;
 }

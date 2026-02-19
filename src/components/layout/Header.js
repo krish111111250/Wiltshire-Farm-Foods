@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { FaShoppingBasket, FaUser, FaPhoneAlt, FaFileAlt, FaTimes, FaChevronDown, FaBars } from 'react-icons/fa';
+import {
+  FaShoppingBasket, FaUser, FaPhoneAlt, FaEnvelope,
+  FaFileAlt, FaTimes, FaChevronDown, FaBars, FaHeart, FaSearch
+} from 'react-icons/fa';
 import { useBasket } from '../../context/BasketContext';
 import { useAuth } from '../../context/AuthContext';
 import '../../styles/Header.css';
@@ -14,24 +17,16 @@ const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navItems = [
-    { label: "Ready Meals", route: null, category: "Ready Meals" },
-    { label: "Desserts", route: "/desserts", category: null },
-    { label: "Bakery", route: "/bakery", category: null },
-    { label: "Breakfast & Snacks", route: "/breakfast-snacks", category: null },
-    { label: "Special Offers", route: "/special-offers", category: null },
-    { label: "About Our Food", route: "/about-our-food", category: null },
-    { label: "Help & Advice", route: "/help-advice", category: null },
+    { label: "Home", route: "/" },
+    { label: "How to get started", route: "/" },
+    { label: "About our food", route: "/about-our-food" },
+    { label: "About us", route: "/" },
   ];
 
   const handleNavClick = (item) => {
     setIsMobileMenuOpen(false);
     setIsMegaMenuOpen(false);
-    if (item.route) {
-      navigate(item.route);
-    } else if (item.category) {
-      setActiveCategory(item.category);
-      navigate('/');
-    }
+    if (item.route) navigate(item.route);
   };
 
   const handleSearchChange = (e) => {
@@ -44,111 +39,132 @@ const Header = () => {
   return (
     <header className="header-container" onMouseLeave={() => setIsMegaMenuOpen(false)}>
 
-      {/* --- TOP BAR (green strip) --- */}
-      <div className="top-bar">
-        <div className="top-bar-inner">
-          <div className="top-bar-left">
-            <Link to="/request-brochure" className="top-link">
-              <FaFileAlt /> <span className="hide-mobile">Request a Brochure</span>
-            </Link>
-            <span className="top-link hide-mobile">Trustpilot</span>
-            <span className="top-link">
-              <FaPhoneAlt /> <span className="hide-mobile">9363495266</span>
-            </span>
-            <Link to="/contact-us" className="top-link hide-mobile">Contact Us</Link>
+      {/* ── ROW 1: Very top cream bar ── */}
+      <div className="top-cream-bar">
+        <div className="top-cream-inner">
+          <span className="top-cream-right">
+            <span className="top-cream-link">Enter Delivery Postcode</span>
+            <span className="top-cream-divider">|</span>
+            {user ? (
+              <>
+                <span className="top-cream-link"><FaUser size={11} /> {user.email}</span>
+                <span className="top-cream-divider">|</span>
+                <span className="top-cream-link" onClick={() => { logout(); navigate('/'); }} style={{ cursor: 'pointer' }}>Logout</span>
+              </>
+            ) : (
+              <>
+                <Link to="/login" className="top-cream-link">Sign In</Link>
+                <span className="top-cream-divider">|</span>
+                <Link to="/register" className="top-cream-link">Register</Link>
+              </>
+            )}
+          </span>
+        </div>
+      </div>
+
+      {/* ── ROW 2: Grey bar with logo ── */}
+      <div className="grey-bar">
+        <div className="grey-bar-inner">
+          {/* Left: contact info */}
+          <div className="grey-bar-left">
+            <div className="contact-item">
+              <FaPhoneAlt size={13} />
+              <span>Call 0800 077 3100</span>
+            </div>
+            <div className="contact-item">
+              <FaEnvelope size={13} />
+              <span>Contact us</span>
+            </div>
           </div>
 
-          <div className="top-bar-right">
-            {user ? (
-              <div className="user-info">
-                <span className="top-link"><FaUser /> <span className="hide-mobile">{user.email}</span></span>
-                <button onClick={() => { logout(); navigate('/'); }} className="logout-btn">Logout</button>
-              </div>
-            ) : (
-              <Link to="/login" className="top-link">
-                <FaUser /> <span className="hide-mobile">Login / Register</span>
-              </Link>
-            )}
+          {/* Centre: Logo */}
+          <Link to="/" className="wff-logo">
+            <div className="logo-top">WILTSHIRE</div>
+            <div className="logo-mid">EST. FARM 1991</div>
+          </Link>
+
+          {/* Right: mobile hamburger */}
+          <button
+            className="mobile-menu-toggle"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            {isMobileMenuOpen ? <FaTimes size={22} /> : <FaBars size={22} />}
+          </button>
+        </div>
+      </div>
+
+      {/* ── ROW 3: Gold bar ── */}
+      <div className="gold-header-bar">
+        <div className="gold-bar-inner">
+          <div className="gold-bar-left">
+            <FaFileAlt size={14} />
+            <span>Shop by brochure code</span>
+          </div>
+          <div className="logo-foods-text">FOODS</div>
+          <div className="gold-bar-right desktop-only">
+            <Link to="/request-brochure" className="gold-bar-link">Request a brochure</Link>
           </div>
         </div>
       </div>
 
-      {/* --- MIDDLE BAR (Logo, Search, Basket, Hamburger) --- */}
-      <div className="middle-bar">
-        <div className="middle-bar-inner">
-          <Link to="/" className="logo">Wiltshire Farm Foods</Link>
-
+      {/* ── SEARCH ROW ── */}
+      <div className="search-row">
+        <div className="search-row-inner">
           <div className="search-container">
+            <FaSearch size={14} className="search-icon-inner" />
             <input
               type="text"
-              placeholder="Search products..."
+              placeholder="Search for items or brochure code"
               className="search-input"
               value={searchTerm}
               onChange={handleSearchChange}
             />
             {searchTerm && (
               <button className="clear-search-btn" onClick={() => setSearchTerm('')}>
-                <FaTimes />
+                <FaTimes size={12} />
               </button>
             )}
             <button className="search-btn">Search</button>
           </div>
-
-          <div className="header-right-actions">
-            {/* Brochure button — hidden on mobile */}
-            <Link to="/request-brochure" className="hide-mobile">
-              <button className="request-brochure-btn">Request a brochure</button>
-            </Link>
-
-            {/* Basket */}
-            <Link to="/basket" className="basket-container">
-              <FaShoppingBasket size={22} />
-              <span>£{basketTotal.toFixed(2)}</span>
-            </Link>
-
-            {/* Hamburger — only on mobile */}
-            <button
-              className="mobile-menu-toggle"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              aria-label="Toggle menu"
-            >
-              {isMobileMenuOpen ? <FaTimes size={22} /> : <FaBars size={22} />}
-            </button>
-          </div>
+          <Link to="/request-brochure" className="request-brochure-btn desktop-only">
+            Request a brochure
+          </Link>
         </div>
       </div>
 
-      {/* --- DESKTOP NAV BAR --- */}
+      {/* ── NAV ROW (desktop) ── */}
       <nav className="nav-bar desktop-only">
         <div className="nav-bar-inner">
-          {/* Browse Mega Menu */}
+
+          {/* Browse dropdown */}
           <div className="browse-container">
             <button
               className="browse-btn"
               onMouseEnter={() => setIsMegaMenuOpen(true)}
               onClick={() => setIsMegaMenuOpen(!isMegaMenuOpen)}
             >
-              Browse our meals <FaChevronDown />
+              Browse our meals <FaChevronDown size={11} />
             </button>
 
             {isMegaMenuOpen && (
               <div className="mega-menu" onMouseEnter={() => setIsMegaMenuOpen(true)}>
                 <div className="mega-banners">
                   <div className="menu-banner banner-dark">
+                    <img src="https://images.unsplash.com/photo-1544025162-d76694265947?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Chef's Kitchen" />
                     <div className="banner-content">
                       <h3>CHEF'S KITCHEN</h3>
                       <p>OUR NEW LUXURY MENU</p>
                       <button className="banner-btn" onClick={() => { setActiveCategory('All'); navigate('/'); setIsMegaMenuOpen(false); }}>Shop now</button>
                     </div>
-                    <img src="https://images.unsplash.com/photo-1544025162-d76694265947?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Chef's Kitchen" />
                   </div>
                   <div className="menu-banner banner-light">
+                    <img src="https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Softer Foods" />
                     <div className="banner-content">
                       <h3>SOFTER<br />foods</h3>
                       <p>Level 4, Level 5 & Level 6</p>
                       <button className="banner-btn" onClick={() => { setActiveCategory('All'); navigate('/'); setIsMegaMenuOpen(false); }}>SHOP NOW</button>
                     </div>
-                    <img src="https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Softer Foods" />
                   </div>
                 </div>
                 <div className="mega-menu-grid">
@@ -191,51 +207,54 @@ const Header = () => {
             )}
           </div>
 
-          {/* Desktop Nav Items */}
+          {/* Centre nav links */}
           <ul className="nav-list">
-            {navItems.map((item, index) => (
-              <li key={index} className="nav-item" onClick={() => handleNavClick(item)}>
+            {navItems.map((item, i) => (
+              <li key={i} className="nav-item" onClick={() => handleNavClick(item)}>
                 {item.label}
               </li>
             ))}
           </ul>
+
+          {/* Right: favourites + basket */}
+          <div className="nav-right-actions">
+            <button className="nav-icon-btn"><FaHeart size={18} /><span>Favourites</span></button>
+            <Link to="/basket" className="basket-container">
+              <FaShoppingBasket size={20} />
+              <span>£{basketTotal.toFixed(2)}</span>
+            </Link>
+          </div>
         </div>
       </nav>
 
-      {/* --- MOBILE FULL-SCREEN DRAWER MENU --- */}
+      {/* ── MOBILE DRAWER ── */}
       {isMobileMenuOpen && (
         <>
-          {/* Backdrop */}
           <div className="mobile-backdrop" onClick={closeMobileMenu} />
-
-          {/* Drawer */}
           <div className="mobile-drawer">
             <div className="mobile-drawer-header">
               <span className="mobile-drawer-title">Menu</span>
-              <button className="mobile-close-btn" onClick={closeMobileMenu}>
-                <FaTimes size={20} />
-              </button>
+              <button className="mobile-close-btn" onClick={closeMobileMenu}><FaTimes size={20} /></button>
             </div>
-
-            {/* All category nav items */}
             <ul className="mobile-nav-list">
-              {navItems.map((item, index) => (
-                <li key={index} className="mobile-nav-item" onClick={() => handleNavClick(item)}>
-                  {item.label}
-                </li>
+              <li className="mobile-nav-item" onClick={() => { setActiveCategory('Ready Meals'); navigate('/'); closeMobileMenu(); }}>Ready Meals</li>
+              <li className="mobile-nav-item" onClick={() => { navigate('/desserts'); closeMobileMenu(); }}>Desserts</li>
+              <li className="mobile-nav-item" onClick={() => { navigate('/bakery'); closeMobileMenu(); }}>Bakery</li>
+              <li className="mobile-nav-item" onClick={() => { navigate('/breakfast-snacks'); closeMobileMenu(); }}>Breakfast & Snacks</li>
+              <li className="mobile-nav-item" onClick={() => { navigate('/special-offers'); closeMobileMenu(); }}>Special Offers</li>
+              {navItems.map((item, i) => (
+                <li key={i} className="mobile-nav-item" onClick={() => handleNavClick(item)}>{item.label}</li>
               ))}
             </ul>
-
             <div className="mobile-drawer-footer">
               {user ? (
-                <button className="mobile-logout-btn" onClick={() => { logout(); navigate('/'); closeMobileMenu(); }}>
-                  Logout
-                </button>
+                <button className="mobile-logout-btn" onClick={() => { logout(); navigate('/'); closeMobileMenu(); }}>Logout</button>
               ) : (
-                <Link to="/login" onClick={closeMobileMenu} className="mobile-login-btn">
-                  <FaUser /> Login / Register
-                </Link>
+                <Link to="/login" onClick={closeMobileMenu} className="mobile-login-btn"><FaUser /> Login / Register</Link>
               )}
+              <Link to="/basket" onClick={closeMobileMenu} className="mobile-basket-link">
+                <FaShoppingBasket /> Basket £{basketTotal.toFixed(2)}
+              </Link>
             </div>
           </div>
         </>
