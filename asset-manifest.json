@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/Wiltshire-Farm-Foods/static/css/main.688daf94.css",
-    "main.js": "/Wiltshire-Farm-Foods/static/js/main.0016b7ef.js",
+    "main.css": "/Wiltshire-Farm-Foods/static/css/main.5dc446de.css",
+    "main.js": "/Wiltshire-Farm-Foods/static/js/main.87d608b5.js",
     "static/js/781.bc805559.chunk.js": "/Wiltshire-Farm-Foods/static/js/781.bc805559.chunk.js",
     "static/js/549.78e1695e.chunk.js": "/Wiltshire-Farm-Foods/static/js/549.78e1695e.chunk.js",
     "static/js/391.578e0943.chunk.js": "/Wiltshire-Farm-Foods/static/js/391.578e0943.chunk.js",
     "index.html": "/Wiltshire-Farm-Foods/index.html",
-    "main.688daf94.css.map": "/Wiltshire-Farm-Foods/static/css/main.688daf94.css.map",
-    "main.0016b7ef.js.map": "/Wiltshire-Farm-Foods/static/js/main.0016b7ef.js.map",
+    "main.5dc446de.css.map": "/Wiltshire-Farm-Foods/static/css/main.5dc446de.css.map",
+    "main.87d608b5.js.map": "/Wiltshire-Farm-Foods/static/js/main.87d608b5.js.map",
     "781.bc805559.chunk.js.map": "/Wiltshire-Farm-Foods/static/js/781.bc805559.chunk.js.map",
     "549.78e1695e.chunk.js.map": "/Wiltshire-Farm-Foods/static/js/549.78e1695e.chunk.js.map",
     "391.578e0943.chunk.js.map": "/Wiltshire-Farm-Foods/static/js/391.578e0943.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.688daf94.css",
-    "static/js/main.0016b7ef.js"
+    "static/css/main.5dc446de.css",
+    "static/js/main.87d608b5.js"
   ]
 }
