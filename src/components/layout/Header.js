@@ -21,7 +21,6 @@ const Header = () => {
     { label: "How to get started", route: "/" },
     { label: "About our food", route: "/about-our-food" },
     { label: "About us", route: "/" },
-    { label: "Contact us", route: "/contact-us" },
   ];
 
   const handleNavClick = (item) => {
@@ -72,10 +71,10 @@ const Header = () => {
               <FaPhoneAlt size={13} />
               <span>Call 0800 077 3100</span>
             </div>
-            <div className="contact-item">
+            <Link to="/contact-us" className="contact-item" style={{ textDecoration: 'none', color: 'white' }}>
               <FaEnvelope size={13} />
               <span>Contact us</span>
-            </div>
+            </Link>
           </div>
 
           {/* Centre: Logo */}
