@@ -21,6 +21,7 @@ const Header = () => {
     { label: "How to get started", route: "/" },
     { label: "About our food", route: "/about-our-food" },
     { label: "About us", route: "/" },
+    { label: "Contact us", route: "/contact-us" },
   ];
 
   const handleNavClick = (item) => {
@@ -103,7 +104,7 @@ const Header = () => {
           </div>
           <div className="logo-foods-text">FOODS</div>
           <div className="gold-bar-right desktop-only">
-            <Link to="/request-brochure" className="gold-bar-link">Request a brochure</Link>
+            <Link to="/request-brochure" className="gold-bar-link"></Link>
           </div>
         </div>
       </div>
