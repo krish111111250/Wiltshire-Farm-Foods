@@ -1,88 +1,111 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import { useBasket } from '../context/BasketContext'; // Use BasketContext for login
-import '../styles/Auth.css'; // Ensure you have this CSS file or remove this line
+import { useAuth } from '../context/AuthContext';
+import '../styles/Auth.css';
 
 const Login = () => {
   const navigate = useNavigate();
-  const { login } = useBasket(); // Get the login function from BasketContext
-  
+  const { login } = useAuth();
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
+  const [keepSignedIn, setKeepSignedIn] = useState(false);
 
   const handleLogin = (e) => {
     e.preventDefault();
-
-    // Basic Validation
-    if (!email || !password) {
-      alert("Please fill in all fields");
-      return;
-    }
-
-    // Call the login function from Context
-    // We pass the email string so the context can create the user object
-    login(email);
-
-    alert(`Welcome back! Logged in as ${email}`);
-    navigate('/checkout'); // Redirect to Checkout (since that's usually where they came from)
+    if (!email || !password) return;
+    login(email, password);
+    navigate('/');
   };
 
   return (
-    <div className="auth-container">
-      <div className="auth-card">
-        <h2>Login to Your Account</h2>
-        <p>Enjoy faster checkout and track your orders.</p>
+    <div className="auth-page">
+      <div className="auth-form-wrap">
 
-        <form onSubmit={handleLogin}>
-          
-          <div className="form-group" style={{ textAlign: 'left', marginBottom: '15px' }}>
-            <label style={{ display: 'block', marginBottom: '5px', fontWeight: 'bold' }}>
-              Email Address
-            </label>
+        <h1 className="auth-heading">Sign In</h1>
+        <div className="auth-heading-line" />
+        <p className="auth-subtext">
+          If you've already registered with <strong>www.wiltshirefarmfoods.com</strong>, please sign in here.
+        </p>
+
+        <form onSubmit={handleLogin} className="auth-form">
+
+          {/* Email */}
+          <div className="auth-field">
+            <div className="auth-label-row">
+              <label>Email address</label>
+              <span className="auth-required">*This field is required</span>
+            </div>
             <input
               type="email"
               required
               className="auth-input"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="example@mail.com"
-              style={{ width: '100%', padding: '10px', borderRadius: '4px', border: '1px solid #ccc' }}
+              placeholder="Enter your email address"
             />
           </div>
 
-          <div className="form-group" style={{ textAlign: 'left', marginBottom: '20px' }}>
-            <label style={{ display: 'block', marginBottom: '5px', fontWeight: 'bold' }}>
-              Password
-            </label>
+          {/* Password */}
+          <div className="auth-field">
+            <div className="auth-label-row">
+              <label>Password</label>
+              <span className="auth-required">*This field is required</span>
+            </div>
+            <div className="auth-input-wrap">
+              <input
+                type={showPassword ? 'text' : 'password'}
+                required
+                className="auth-input"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder="Enter your password"
+              />
+              <button type="button" className="show-btn" onClick={() => setShowPassword(!showPassword)}>
+                {showPassword ? '🙈 Hide' : '👁 Show'}
+              </button>
+            </div>
+          </div>
+
+          {/* Forgot password */}
+          <p className="auth-forgot">
+            Have you forgotten your password?{' '}
+            <Link to="/login" className="auth-link">Click here to reset your password</Link>
+          </p>
+
+          {/* Keep signed in */}
+          <label className="auth-checkbox-label">
             <input
-              type="password"
-              required
-              className="auth-input"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              placeholder="••••••••"
-              style={{ width: '100%', padding: '10px', borderRadius: '4px', border: '1px solid #ccc' }}
+              type="checkbox"
+              checked={keepSignedIn}
+              onChange={(e) => setKeepSignedIn(e.target.checked)}
             />
+            Keep me signed in on this device
+          </label>
+
+          {/* Submit */}
+          <button type="submit" className="auth-submit-btn">
+            Sign in to your account
+          </button>
+
+          {/* OR divider */}
+          <div className="auth-or-divider">
+            <span className="auth-or-line" /><span className="auth-or-text">or</span><span className="auth-or-line" />
           </div>
 
-          <button type="submit" className="auth-btn" style={{ 
-            width: '100%', 
-            padding: '12px', 
-            background: '#1a4d3a', 
-            color: 'white', 
-            border: 'none', 
-            borderRadius: '4px', 
-            cursor: 'pointer',
-            fontSize: '16px',
-            fontWeight: 'bold'
-          }}>
-            Login
+          {/* One-time code */}
+          <button type="button" className="auth-otp-btn">
+            Sign in with one-time code via email
           </button>
         </form>
 
-        <p className="auth-switch" style={{ marginTop: '20px', fontSize: '14px' }}>
-          Don't have an account? <Link to="/register" style={{ color: '#1a4d3a', fontWeight: 'bold' }}>Register here</Link>
+        {/* Register link */}
+        <p className="auth-switch-text">
+          Don't have an account?{' '}
+          <Link to="/register" className="auth-link">Click here to create an account</Link>
         </p>
+
       </div>
     </div>
   );
